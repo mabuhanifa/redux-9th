@@ -21,7 +21,6 @@ export const conversationsApi = apiSlice.injectEndpoints({
         try {
           await cacheDataLoaded;
           socket.on("conversation", (data) => {
-            console.log(data);
             updateCachedData((draft) => {
               const conversation = draft.data.find(
                 (c) => c.id == data?.data?.id
